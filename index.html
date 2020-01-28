@@ -3,7 +3,7 @@
 	<head>
 		<title>Future Image</title>
    <meta charset="utf-8">
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -38,9 +38,9 @@
 
 		
 		<style>
-		<!-- @viewport {
+		 @viewport {
             width: device-width;
-        }-->
+        }
 			body {
 				font-family: Monospace;
 				background-color: #000;
@@ -64,12 +64,14 @@
 			
 			#btn {
     position: absolute;
+	padding: 0;
     display: block;
-    z-index: 99;
+	  z-index: 99;
     left: 2%;
     top: 94%;
 	width: 35px;
-    height: 35px;
+    height: 32px;
+	border: 2px solid #white;
 	 text-align: center;
 	 color: white;
 	 background-size:100% auto
@@ -82,12 +84,13 @@
 	display: inline-block;
 	font-size: 10px;
 	margin: 8px 8px;
+	border: 2px solid #white;
     z-index: 99;
     left: 10%;
     top: 93%;
 	 background-color: #4CAF50;
 	color: white;
-	border: none;
+ 
 	border-radius: 50%;
 	width: 32px;
     height: 32px;
@@ -98,6 +101,7 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
+	border: 2px solid #white;
 	font-size: 16px;
 	margin: 8px 8px;
     z-index: 99;
@@ -105,7 +109,7 @@
     top: 93%;
 	  background-color: #4CAF50;
 	color: white;
-	border: none;
+	 
 	border-radius: 50%;
 	width: 32px;
     height: 32px;
@@ -124,7 +128,7 @@
     top: 93%;
 	  background-color: #4CAF50;
 	color: white;
-	border: none;
+	 
 	border-radius: 50%;
 	width: 32px;
     height: 32px;
@@ -135,6 +139,8 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
+	
+	border: 2px solid #white;
 	font-size: 16px;
 	margin: 8px 8px;
     z-index: 99;
@@ -142,7 +148,7 @@
     top: 93%;
 	 background-color: #4CAF50;
 	color: white;
-	border: none;
+	 
 	border-radius: 50%;
 	width: 32px;
     height: 32px;
@@ -172,14 +178,15 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
+	border: 2px solid #white;
 	font-size: 9px;
 	margin: 8px 8px;
     z-index: 99;
     left: 73%;
     top: 93%;
-	 background-color: #4CAF50;
+	 background-color: #666699;
 	color: white;
-	border: none;
+	 
 	border-radius: 50%;
 	width: 32px;
     height: 32px;
@@ -189,8 +196,8 @@
 	   position: absolute;
     display: block;
     z-index: 99;
-    left: 85%;
-    top: 60%;
+    left: 87%;
+    top: 67%;
 	width: 200px;
     height: 300px;
 	 text-align: center;

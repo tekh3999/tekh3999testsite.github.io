@@ -1,9 +1,9 @@
-﻿ <!DOCTYPE html>
+﻿  <!DOCTYPE html>
 
 	<head>
 		<title>Future Image</title>
    <meta charset="utf-8">
-	 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -27,7 +27,7 @@
  
 <script type="text/javascript"></script>
 		 
-		 
+		<script src="js/lib/stats.min.js"></script>
 		 
 		 
 			<script src="loaders/FBXLoader.js"></script>
@@ -37,7 +37,7 @@
 <script>THREEx.ArToolkitContext.baseURL = ''</script>
 
 		
-		<style>
+		  <style>
 		 @viewport {
             width: device-width;
         }
@@ -208,6 +208,7 @@
 			
 		</style>
 		 
+		 
 	</head>
 
 	 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'> 
@@ -275,7 +276,8 @@
 			
 	 
 var button = document.getElementById('triangle');
-       // button.addEventListener("click", onReplaceTexture)	
+       // button.addEventListener("click", onReplaceTexture)
+	   
 			function init() {
 			var id2
 		var fov = 45;	
@@ -421,14 +423,14 @@ var mesh;
 
 				light = new THREE.DirectionalLight( 0xffffff );
 				light.position.set( 0, 200, 100 );
-				light.castShadow = true;
-				light.shadow.camera.top = 100;
-				light.shadow.camera.bottom = - 100;
-				light.shadow.camera.left = - 100;
-				light.shadow.camera.right = 100;
+				//light.castShadow = true;
+				light.shadow.camera.top = 180;
+				light.shadow.camera.bottom = - 180;
+				light.shadow.camera.left = - 180;
+				light.shadow.camera.right = 180;
 				scene.add( light );
 
-				//scene.add( new THREE.CameraHelper( light.shadow.camera ) );
+				// scene.add( new THREE.CameraHelper( light.shadow.camera ) );
 
 				// ground
 				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );

@@ -1,7 +1,7 @@
 ﻿ <!DOCTYPE html>
 
 	<head>
-		<title>Mobile-version</title>
+		<title>Future Image</title>
    <meta charset="utf-8">
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="mobile-web-app-capable" content="yes">
@@ -27,7 +27,7 @@
  
 <script type="text/javascript"></script>
 		 
-		<script src="js/lib/stats.min.js"></script>
+		 
 		 
 		 
 			<script src="loaders/FBXLoader.js"></script>
@@ -38,9 +38,9 @@
 
 		
 		<style>
-		 @viewport {
+		<!-- @viewport {
             width: device-width;
-        }
+        }-->
 			body {
 				font-family: Monospace;
 				background-color: #000;
@@ -67,9 +67,9 @@
     display: block;
     z-index: 99;
     left: 2%;
-    top: 90%;
-	width: 51px;
-    height: 51px;
+    top: 94%;
+	width: 35px;
+    height: 35px;
 	 text-align: center;
 	 color: white;
 	 background-size:100% auto
@@ -80,17 +80,17 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
-	font-size: 5px
+	font-size: 10px;
 	margin: 8px 8px;
     z-index: 99;
     left: 10%;
-    top: 89%;
+    top: 93%;
 	 background-color: #4CAF50;
 	color: white;
 	border: none;
 	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+	width: 32px;
+    height: 32px;
     }
 	
 	#triangle {
@@ -98,17 +98,17 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
-	font-size: 10px;
+	font-size: 16px;
 	margin: 8px 8px;
     z-index: 99;
     left: 25%;
-    top: 89%;
+    top: 93%;
 	  background-color: #4CAF50;
 	color: white;
 	border: none;
 	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+	width: 32px;
+    height: 32px;
 	 
     }
 	
@@ -121,13 +121,13 @@
 	margin: 8px 8px;
     z-index: 99;
     left: 37%;
-    top: 89%;
+    top: 93%;
 	  background-color: #4CAF50;
 	color: white;
 	border: none;
 	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+	width: 32px;
+    height: 32px;
     }
 	
 	#cylinder {
@@ -135,17 +135,17 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
-	font-size: 12px;
+	font-size: 16px;
 	margin: 8px 8px;
     z-index: 99;
     left: 61%;
-    top: 89%;
+    top: 93%;
 	 background-color: #4CAF50;
 	color: white;
 	border: none;
 	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+	width: 32px;
+    height: 32px;
     }
 	
 	.a1{
@@ -172,26 +172,26 @@
     padding: 0%;
 	text-align: center;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 9px;
 	margin: 8px 8px;
     z-index: 99;
     left: 73%;
-    top: 89%;
+    top: 93%;
 	 background-color: #4CAF50;
 	color: white;
 	border: none;
 	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+	width: 32px;
+    height: 32px;
       }
 	  
 	  #UIrt{
 	   position: absolute;
     display: block;
     z-index: 99;
-    left: 80%;
+    left: 85%;
     top: 60%;
-	width: 250px;
+	width: 200px;
     height: 300px;
 	 text-align: center;
 	  
@@ -215,12 +215,12 @@
 
 <div  style='margin: 0px; background-color: #bbbbbb;overflow: hidden;'>
 		<img id="btn" src="Images/Home.png" onclick="window.location.href ='https://futureimagecomics.com/';" alt="Home">
-  <button id="btn2"   onclick="video';">CAMERA</button>
-   <button id="triangle" src="Images/droid.png" >Astro Droid</button`>
+  <button id="btn2"   onclick="video';">CAM</button>
+   <button id="triangle" src="Images/droid.png" >1</button`>
    
-    <button id="cube" src="Images/avatar.png">Logos</button>
+    <button id="cube" src="Images/avatar.png">2</button>
 	 <button id="fbxTexture" value="Replace texture" src="Images/texturebtn.png">Texture</button>
-	 <button id="cylinder"  src="Images/animations.png">Animations</button>
+	 <button id="cylinder"  src="Images/animations.png">3</button>
  <img id="UIrt" src="Images/uirt.png"></img`>
 </div>
 	 
@@ -414,14 +414,14 @@ var mesh;
 
 				light = new THREE.DirectionalLight( 0xffffff );
 				light.position.set( 0, 200, 100 );
-				//light.castShadow = true;
-				light.shadow.camera.top = 180;
-				light.shadow.camera.bottom = - 180;
-				light.shadow.camera.left = - 180;
-				light.shadow.camera.right = 180;
+				light.castShadow = true;
+				light.shadow.camera.top = 100;
+				light.shadow.camera.bottom = - 100;
+				light.shadow.camera.left = - 100;
+				light.shadow.camera.right = 100;
 				scene.add( light );
 
-				// scene.add( new THREE.CameraHelper( light.shadow.camera ) );
+				//scene.add( new THREE.CameraHelper( light.shadow.camera ) );
 
 				// ground
 				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );

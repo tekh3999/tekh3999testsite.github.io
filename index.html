@@ -1,0 +1,752 @@
+﻿ <!DOCTYPE html>
+
+	<head>
+		<title>Mobile-version</title>
+   <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<script src="build/three.js"></script>
+		
+		<!-- ar.js -->
+<script src="build/ar.js"></script>
+
+
+		<script src="js/libs/inflate.min.js"></script>
+ 
+
+		<script src="js/controls/OrbitControls.js"></script>
+ 
+ 
+<!-- includes for threex.glow -->
+ 
+<!-- include for threex.glowdatgui -->
+<script src='js/libs/dat.gui.min.js'></script>
+ 
+<script type="text/javascript"></script>
+		 
+		<script src="js/libs/stats.min.js"></script>
+		 
+		 
+			<script src="loaders/FBXLoader.js"></script>
+			<!--Special FX JS's-->
+
+			
+<script>THREEx.ArToolkitContext.baseURL = ''</script>
+
+		
+		<style>
+		 @viewport {
+            width: device-width;
+        }
+			body {
+				font-family: Monospace;
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+			#info {
+				color: #fff;
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				text-align: center;
+				z-index: 100;
+				display:block;
+			}
+			#info a {
+				color: #046;
+				font-weight: bold;
+			}
+			
+			#btn {
+    position: absolute;
+    display: block;
+    z-index: 99;
+    left: 2%;
+    top: 90%;
+	width: 51px;
+    height: 51px;
+	 text-align: center;
+	 color: white;
+	 background-size:100% auto
+	 }
+	
+	#btn2 {
+    position: absolute;
+    padding: 0%;
+	text-align: center;
+	display: inline-block;
+	font-size: 5px
+	margin: 8px 8px;
+    z-index: 99;
+    left: 10%;
+    top: 89%;
+	 background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 65px;
+    height: 65px;
+    }
+	
+	#triangle {
+    position: absolute;
+    padding: 0%;
+	text-align: center;
+	display: inline-block;
+	font-size: 10px;
+	margin: 8px 8px;
+    z-index: 99;
+    left: 25%;
+    top: 89%;
+	  background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 65px;
+    height: 65px;
+	 
+    }
+	
+	#cube {
+      position: absolute;
+    padding: 0%;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	margin: 8px 8px;
+    z-index: 99;
+    left: 37%;
+    top: 89%;
+	  background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 65px;
+    height: 65px;
+    }
+	
+	#cylinder {
+    position: absolute;
+    padding: 0%;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+	margin: 8px 8px;
+    z-index: 99;
+    left: 61%;
+    top: 89%;
+	 background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 65px;
+    height: 65px;
+    }
+	
+	.a1{
+	 color:white;
+	 }
+	 
+	 #btnani{
+	 
+	  }
+	  
+	  span.link {
+				color: skyblue;
+				cursor: pointer;
+				text-decoration : underline;
+			}
+
+		.butdivs{
+		}
+.pstyle{
+}		
+
+  #fbxTexture {
+       position: absolute;
+    padding: 0%;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	margin: 8px 8px;
+    z-index: 99;
+    left: 73%;
+    top: 89%;
+	 background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 65px;
+    height: 65px;
+      }
+	  
+	  #UIrt{
+	   position: absolute;
+    display: block;
+    z-index: 99;
+    left: 80%;
+    top: 60%;
+	width: 250px;
+    height: 300px;
+	 text-align: center;
+	  
+	 background-size:100% auto
+	  
+	  }
+			
+		</style>
+		 
+	</head>
+
+	 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'> 
+	
+	<div id="container"></div>
+		<div id="info">
+			<a href="http://threejs.org" target="_blank" rel="noopener"> </a>  <br />
+			 <a href="https://www.futureimagecomics.com/" target="_blank" rel="noopener"> </a>
+			 
+		</div>
+
+
+<div  style='margin: 0px; background-color: #bbbbbb;overflow: hidden;'>
+		<img id="btn" src="Images/Home.png" onclick="window.location.href ='https://futureimagecomics.com/';" alt="Home">
+  <button id="btn2"   onclick="video';">CAMERA</button>
+   <button id="triangle" src="Images/droid.png" >Astro Droid</button`>
+   
+    <button id="cube" src="Images/avatar.png">Logos</button>
+	 <button id="fbxTexture" value="Replace texture" src="Images/texturebtn.png">Texture</button>
+	 <button id="cylinder"  src="Images/animations.png">Animations</button>
+ <img id="UIrt" src="Images/uirt.png"></img`>
+</div>
+	 
+		<script>
+		
+		//disabled button
+		function disableR2(){
+	document.getElementById("triangle").disabled = true;
+		  
+		}
+		
+		function enableR2(){
+		document.getElementById("triangle").disabled = false;
+		}
+		
+		function disablefireworks(){
+		document.getElementById("cube").disabled = true;
+		}
+		
+		function enablefireworks(){
+		document.getElementById("cube").disabled = false;
+		}
+		
+		function disableGlowText(){
+		document.getElementById("cylinder").disabled = true;
+		 
+		}
+		
+		function enableGlowText(){
+		document.getElementById("cylinder").disabled = false;
+		// add a DAT.gui for fine tuning
+	 }
+		
+			disableR2();
+		
+ 
+			var container, stats, controls, object;
+		 var light;
+
+		var clock = new THREE.Clock();
+
+			var mixer;
+			init();
+			animate();
+			
+	 
+var button = document.getElementById('triangle');
+       // button.addEventListener("click", onReplaceTexture)	
+			function init() {
+			var id2
+		var fov = 45;	
+		
+	 
+// custom global variables
+var mesh;
+
+	
+		
+				container = document.createElement( 'container' );
+				document.body.appendChild( container );
+				
+				renderer = new THREE.WebGLRenderer( {
+				antialias: true,
+				alpha: true
+				} );
+				//var fov = 45;
+					renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.domElement.style.position = 'absolute'
+				renderer.domElement.style.top = '0px'
+				renderer.domElement.style.left = '0px'
+				renderer.shadowMap.enabled = true;
+				container.appendChild( renderer.domElement );
+				document.body.appendChild( renderer.domElement );
+ 
+	// array of functions for the rendering loop
+				var onRenderFcts= [];
+				
+				// init scene and camera
+			var scene = new THREE.Scene();
+				
+			 // Create a camera
+			 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.set( 0, 100, 500 );
+	//var camera = new THREE.Camera();
+	scene.add(camera);
+
+				//controls = new THREE.OrbitControls( camera );
+				//controls.target.set( 0, 100, 0 );
+				//controls.update();
+				
+				var video = document.querySelector("#videoElement");
+
+				if (navigator.mediaDevices.getUserMedia) {
+	navigator.mediaDevices.getUserMedia({camera: true})
+	.then (function(stream) {
+	camera.srcObject = stream;
+	camera.play();
+	})
+	.catch(function(err0r) {
+	console.log("somthing went wrong!");
+	});
+	}
+	
+	 
+	////////////////////////////////////////////////////////////////////////////////
+	//          handle arToolkitSource
+	////////////////////////////////////////////////////////////////////////////////
+
+	var arToolkitSource = new THREEx.ArToolkitSource({
+		// to read from the webcam 
+		sourceType : 'webcam',
+		
+		// // to read from an image
+		// sourceType : 'image',
+		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',		
+
+		// to read from a video
+		// sourceType : 'video',
+		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',		
+	})
+
+	arToolkitSource.init(function onReady(){
+		onResize()
+	})
+	
+	// handle resize
+	window.addEventListener('resize', function(){
+		onResize()
+	})
+	function onResize(){
+		arToolkitSource.onResize()	
+		arToolkitSource.copySizeTo(renderer.domElement)	
+		if( arToolkitContext.arController !== null ){
+			arToolkitSource.copySizeTo(arToolkitContext.arController.canvas)	
+		}	
+	}
+	////////////////////////////////////////////////////////////////////////////////
+	//          initialize arToolkitContext
+	////////////////////////////////////////////////////////////////////////////////
+	
+
+	// create atToolkitContext
+	var arToolkitContext = new THREEx.ArToolkitContext({
+		cameraParametersUrl: THREEx.ArToolkitContext.baseURL + 'data/data/camera_para.dat',
+		detectionMode: 'mono',
+	})
+	// initialize it
+	arToolkitContext.init(function onCompleted(){
+		// copy projection matrix to camera
+		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+	})
+
+	// update artoolkit on every frame
+	onRenderFcts.push(function(){
+		if( arToolkitSource.ready === false )	return
+
+		arToolkitContext.update( arToolkitSource.domElement )
+		
+		// update scene.visible if the marker is seen
+		scene.visible = camera.visible
+	})
+		
+	////////////////////////////////////////////////////////////////////////////////
+	//          Create a ArMarkerControls
+	////////////////////////////////////////////////////////////////////////////////
+	
+	// init controls for camera
+	 var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
+		 type : 'pattern',
+		//type : 'custom',
+		patternUrl : THREEx.ArToolkitContext.baseURL + 'data/data/pattern-marker.patt',
+	  // patternUrl : THREEx.ArToolkitContext.baseURL + 'data/data/pattern-marker(6).patt',
+//patternUrl : THREEx.ArToolkitContext.baseURL + 'data/data/patt.hiro',
+		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',
+		// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'
+		changeMatrixMode: 'cameraTransformMatrix'
+	})
+	scene.visible = false
+	
+	
+	 
+	 
+				//scene.background = new THREE.Color( 0xa0a0a0 );
+				scene.fog = new THREE.Fog( 0xa0a0a0, 200, 1000 );
+				light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
+				light.position.set( 0, 200, 0 );
+				scene.add( light );
+
+			 
+
+				light = new THREE.DirectionalLight( 0xffffff );
+				light.position.set( 0, 200, 100 );
+				//light.castShadow = true;
+				light.shadow.camera.top = 180;
+				light.shadow.camera.bottom = - 180;
+				light.shadow.camera.left = - 180;
+				light.shadow.camera.right = 180;
+				scene.add( light );
+
+				// scene.add( new THREE.CameraHelper( light.shadow.camera ) );
+
+				// ground
+				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+				mesh.rotation.x = - Math.PI / 2;
+				mesh.receiveShadow = true;
+				//scene.add( mesh );
+
+				var grid = new THREE.GridHelper(2000, 2000, 0x000000, 0x000000 );
+				grid.material.opacity = 0.2;
+				grid.material.transparent = true;
+				//scene.add( grid );
+				
+				 
+	
+				// model
+				var loader = new THREE.FBXLoader();
+				var mymodels = new Array();
+				
+			//var mesh1 =	mymodels[0] = 'obj/models/My_r2_astro_droid.fbx';
+			var mesh1
+			var mesh2 
+			var mesh3  
+		 		
+			 
+				 
+			
+			function addGeometry( type ) {
+
+				for ( var i = 0; i < scene.children.length; i ++ ) {
+
+					var child = scene.children[ i ];
+
+					if ( child.isMesh ) {
+					scene.remove( child );
+						child.geometry.dispose();
+					
+						 
+						//
+						i --;
+
+					}
+
+				}
+
+				if ( type === 1 ) {
+				
+				 loader.load( 'obj/models/My_r2_astro_droid.fbx', function ( objectA ) {
+					mesh1 = objectA
+					mixer = new THREE.AnimationMixer( mesh1 );
+					var action1 = mixer.clipAction( objectA.animations[ 0 ] );
+					action1.play();
+
+				 
+					
+					 function rotateObject2(mesh1, degreeX=0, degreeY= 0, degreeZ=0){
+			
+			mesh1.rotateY(THREE.Math.degToRad(degreeY));
+			mesh1.rotateZ(THREE.Math.degToRad(degreeZ));
+			
+			mesh1.rotateX(THREE.Math.degToRad(degreeX));
+		
+			}
+				
+					//object.scale.set( 4, 4, 4 );
+					mesh1.scale.set( 0.2, 0.2, 0.2 ); //left-Right, top-botom, Zoom
+				
+					rotateObject2(mesh1,-0,-50,0);
+					//rotateObject2(object, -90,0,0); //mocap positition
+					mesh1.position.set(-0,0,-0.9);
+  
+					scene.add( mesh1);
+					  
+					mesh1.visible = true
+					 
+					scene.remove(mesh2);
+					 
+						   scene.remove(mesh3);
+					 
+					 
+					//object.geometry.computeVertexNormals(true);
+				 
+
+				} );
+
+
+				} else if ( type === 2 ) {
+	
+					 
+				// loader.load( 'obj/models/texans_static_4bl.fbx', function ( objectB ) {
+				 // loader.load( 'obj/models/texans_houstonbld.fbx', function ( objectB ) {
+				   loader.load( 'obj/models/bird_fly_3.fbx', function ( objectB ) {
+					mesh2 = objectB
+					mixer = new THREE.AnimationMixer(mesh2 );
+
+					var action = mixer.clipAction( mesh2.animations[ 0 ] );
+				
+			 
+		 	action.play();
+					
+				 
+					 function rotateObject2(mesh2, degreeX=0, degreeY= 0, degreeZ=0){
+			
+			mesh2.rotateY(THREE.Math.degToRad(degreeY));
+			mesh2.rotateZ(THREE.Math.degToRad(degreeZ));
+			
+			//object.rotateX(THREE.Math.degToRad(degreeX));
+		
+			}
+				
+					//object.scale.set( 4, 4, 4 );
+					//mesh2.scale.set( 0.007, 0.007, 0.007 ); //left-Right, top-botom, Zoom, logo
+					mesh2.scale.set( 0.03, 0.03, 0.03 ); //left-Right, top-botom, Zoom
+					rotateObject2(mesh2,-0,-50,0);
+					//rotateObject2(object, -90,0,0); //mocap positition
+					mesh2.position.set(-0,0,-0.9);
+					
+					   
+					scene.add( mesh2 );
+					 
+				 
+					//cancelAnimationFrame(id2);
+					 scene.remove(mesh1);
+				   scene.remove(mesh3);
+					 // mesh2.geometry.computeVertexNormals(true);
+					 } );
+					 
+			} else if ( type === 3 ) {
+		 loader.load( 'obj/models/ri_tshirt_3ds_redo.fbx', function ( objectB ) {
+		  //loader.load( 'obj/models/ri_withradio.fbx', function ( objectB ) {
+					mesh3 = objectB
+					mixer = new THREE.AnimationMixer(mesh3 );
+
+					var action = mixer.clipAction( mesh3.animations[ 0 ] );
+					action.play();
+					 
+					shininess: 25
+					 function rotateObject2(mesh3, degreeX=0, degreeY= 0, degreeZ=0){
+			
+			mesh3.rotateY(THREE.Math.degToRad(degreeY));
+			mesh3.rotateZ(THREE.Math.degToRad(degreeZ));
+			
+			//object.rotateX(THREE.Math.degToRad(degreeX));
+		
+			}
+				
+					//object.scale.set( 4, 4, 4 );
+					mesh3.scale.set(0.07, 0.07, 0.07); //left-Right, top-botom, Zoom
+				//mesh3.scale.set( 0.04, 0.04, 0.04 ); //left-Right, top-botom, Zoom
+					rotateObject2(mesh3,-0,-50,0);
+					//rotateObject2(object, -90,0,0); //mocap positition
+					mesh3.position.set(-0,0,-0.9);
+					
+					   
+					scene.add( mesh3 );
+				
+			scene.remove(mesh1);
+			scene.remove(mesh2);
+			 mesh3.geometry.computeVertexNormals(true);
+			});	
+			
+			}
+			
+			}
+			 addGeometry( 1 );
+		 
+			    
+		 
+				document.getElementById( 'triangle' ).addEventListener( 'click', function () {
+			
+			    // document.getElementById('triangle').onclick = NULL;
+				 
+					addGeometry( 1 )
+					 disableR2();
+					   enablefireworks();
+					enableGlowText();	
+					   					   
+				   } ); 
+			 
+				document.getElementById( 'cube' ).addEventListener( 'click', function () {
+				 
+					addGeometry( 2 );
+					 disablefireworks();
+					enableR2();
+					enableGlowText();
+					 
+				} );
+				
+				document.getElementById( 'cylinder' ).addEventListener( 'click', function () {
+
+					 addGeometry( 3 )
+					 disableGlowText();
+					enablefireworks(); 
+					enableR2();
+					   
+					 	
+				} );
+				
+				
+					 function onReplaceTexture() {
+			  var textureLoader = new THREE.TextureLoader();
+			  textureLoader.setCrossOrigin("anonymous");
+			  textureLoader.load('obj/models/Logo_DiffuseMap.jpg', function (texture) {
+
+			    // mesh is a group contains multiple sub-objects. Traverse and apply texture to all. 
+			    mesh3.traverse(function (child) {
+			      if (child instanceof THREE.Mesh) {
+
+			        // apply texture
+			        child.material.map = texture
+			        child.material.needsUpdate = true;
+			      }
+			    });
+
+			  });
+			  }
+			 
+			var FBXTex = document.getElementById("fbxTexture");
+       FBXTex.addEventListener("click", onReplaceTexture)
+  // 
+  
+  ////////////////////////////
+		//			Skybox		  //
+		///////////////////////////
+		var sphere, cube;
+	 var scCube;
+    var selectableObjs = [];
+    var width = window.innerWidth, height = window.innerHeight;
+	 //Add other scene elements
+        drawSimpleSkybox();
+      // drawShapes();
+		
+		function drawSimpleSkybox() {
+        // define path and box sides images
+        var path = 'textures/';
+        var sides = [ path + 'sbox_px.jpg', path + 'sbox_nx.jpg', path + 'sbox_py.jpg', path + 'sbox_py.jpg', path + 'sbox_pz.jpg', path + 'sbox_nz.jpg' ];
+
+        // load images
+        scCube = THREE.ImageUtils.loadTextureCube(sides);
+        scCube.format = THREE.RGBFormat;
+
+        // prepare skybox material (shader)
+        var skyShader = THREE.ShaderLib["cube"];
+        skyShader.uniforms["tCube"].value = scCube;
+        var skyMaterial = new THREE.ShaderMaterial( {
+            fragmentShader: skyShader.fragmentShader, vertexShader: skyShader.vertexShader,
+            uniforms: skyShader.uniforms, depthWrite: false, side: THREE.BackSide
+        });
+
+        // create Mesh with cube geometry and add to the scene
+        var skyBox = new THREE.Mesh(new THREE.BoxGeometry(500, 500, 500), skyMaterial);
+        skyMaterial.needsUpdate = true;
+
+        skyBox.UserData = {name:"skyBox"};
+
+     // scene.add(skyBox);
+ 
+		
+    }
+  
+ 
+
+      //
+ 
+
+			 window.addEventListener( 'resize', onWindowResize, false );
+
+				// stats
+				stats = new Stats();
+			container.appendChild( stats.dom );
+
+			
+function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+ 
+			}
+			
+			// render the scene
+				onRenderFcts.push(function(){
+		renderer.render( scene, camera );
+		
+		 
+		 
+	})
+ 	
+	// run the rendering loop
+	var lastTimeMsec= null
+	requestAnimationFrame(function animate(nowMsec){
+		// keep looping
+		requestAnimationFrame( animate );
+		// measure time
+		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+		var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+		lastTimeMsec	= nowMsec
+		// call each update function
+		onRenderFcts.forEach(function(onRenderFct){
+			onRenderFct(deltaMsec/1000, nowMsec/1000)
+		});
+		
+	// mesh2.rotation.y = mesh2.rotation.y + 0.01;
+		 
+  //mesh3.rotation.y = mesh3.rotation.y + 0.01;
+	})
+	
+	}
+			//
+ 
+			function animate() {
+
+			id2 = requestAnimationFrame( animate );
+
+				var delta = clock.getDelta();
+
+				if ( mixer ) mixer.update( delta );
+ 
+				stats.update();
+				 
+				  
+				  
+			}
+ 
+		</script>
+ 
+	</body>
+</html>

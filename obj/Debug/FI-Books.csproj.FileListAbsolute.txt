@@ -1,0 +1,6 @@
+C:\my files\Programing Stuff\VS Programs\VS 2013\FI-Books\FI-Books\bin\FI-Books.dll.config
+C:\my files\Programing Stuff\VS Programs\VS 2013\FI-Books\FI-Books\bin\FI-Books.dll
+C:\my files\Programing Stuff\VS Programs\VS 2013\FI-Books\FI-Books\bin\FI-Books.pdb
+C:\my files\Programing Stuff\VS Programs\VS 2013\FI-Books\FI-Books\obj\Debug\FI-Books.csprojResolveAssemblyReference.cache
+C:\my files\Programing Stuff\VS Programs\VS 2013\FI-Books\FI-Books\obj\Debug\FI-Books.dll
+C:\my files\Programing Stuff\VS Programs\VS 2013\FI-Books\FI-Books\obj\Debug\FI-Books.pdb

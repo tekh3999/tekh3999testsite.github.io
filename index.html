@@ -1,9 +1,9 @@
 ﻿ <!DOCTYPE html>
 
 	<head>
-		<title>Mobile-version</title>
-   <meta charset="utf-8">
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>Future Image</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -14,7 +14,7 @@
 <script src="build/ar.js"></script>
 
 
-		<script src="js/libs/inflate.min.js"></script>
+		<script src="js/lib/inflate.min.js"></script>
  
 
 		<script src="js/controls/OrbitControls.js"></script>
@@ -23,12 +23,12 @@
 <!-- includes for threex.glow -->
  
 <!-- include for threex.glowdatgui -->
-<script src='js/libs/dat.gui.min.js'></script>
+<script src='js/lib/dat.gui.min.js'></script>
  
 <script type="text/javascript"></script>
 		 
-		<script src="js/libs/stats.min.js"></script>
-		 
+		<script src="js/lib/stats.min.js"></script>
+		<script src="js/lib/dat.gui.min.js"></script>
 		 
 			<script src="loaders/FBXLoader.js"></script>
 			<!--Special FX JS's-->
@@ -38,9 +38,6 @@
 
 		
 		<style>
-		 @viewport {
-            width: device-width;
-        }
 			body {
 				font-family: Monospace;
 				background-color: #000;
@@ -68,84 +65,57 @@
     z-index: 99;
     left: 2%;
     top: 90%;
-	width: 51px;
-    height: 51px;
-	 text-align: center;
-	 color: white;
-	 background-size:100% auto
-	 }
+	width: 60px;
+    height: 30px;
+	background-color: #0020FF
+	  color: cadetblue;
+    }
 	
 	#btn2 {
     position: absolute;
-    padding: 0%;
-	text-align: center;
-	display: inline-block;
-	font-size: 5px
-	margin: 8px 8px;
+    display: block;
     z-index: 99;
-    left: 10%;
-    top: 89%;
-	 background-color: #4CAF50;
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+    left: 13%;
+    top: 90%;
+	width: 60px;
+    height: 30px;
+	background-color: #0020FF
+	color: cadetblue;
     }
-	
 	#triangle {
     position: absolute;
-    padding: 0%;
-	text-align: center;
-	display: inline-block;
-	font-size: 10px;
-	margin: 8px 8px;
+    display: block;
     z-index: 99;
     left: 25%;
-    top: 89%;
-	  background-color: #4CAF50;
-	color: white;
-	border: none;
-	border-radius: 50%;
+    top: 90%;
 	width: 65px;
-    height: 65px;
-	 
+    height: 30px;
+	background-color: #0020FF
+	color: cadetblue;
     }
 	
 	#cube {
-      position: absolute;
-    padding: 0%;
-	text-align: center;
-	display: inline-block;
-	font-size: 16px;
-	margin: 8px 8px;
+    position: absolute;
+    display: block;
     z-index: 99;
     left: 37%;
-    top: 89%;
-	  background-color: #4CAF50;
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+    top: 90%;
+	width: 80px;
+    height: 40px;
+	background-color: #0020FF
+	color: cadetblue;
     }
 	
 	#cylinder {
     position: absolute;
-    padding: 0%;
-	text-align: center;
-	display: inline-block;
-	font-size: 12px;
-	margin: 8px 8px;
+    display: block;
     z-index: 99;
-    left: 61%;
-    top: 89%;
-	 background-color: #4CAF50;
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 65px;
-    height: 65px;
+    left: 49%;
+    top: 90%;
+	width: 80px;
+    height: 30px;
+	background-color: #0020FF
+	color: cadetblue;
     }
 	
 	.a1{
@@ -166,38 +136,6 @@
 		}
 .pstyle{
 }		
-
-  #fbxTexture {
-       position: absolute;
-    padding: 0%;
-	text-align: center;
-	display: inline-block;
-	font-size: 16px;
-	margin: 8px 8px;
-    z-index: 99;
-    left: 73%;
-    top: 89%;
-	 background-color: #4CAF50;
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 65px;
-    height: 65px;
-      }
-	  
-	  #UIrt{
-	   position: absolute;
-    display: block;
-    z-index: 99;
-    left: 80%;
-    top: 60%;
-	width: 250px;
-    height: 300px;
-	 text-align: center;
-	  
-	 background-size:100% auto
-	  
-	  }
 			
 		</style>
 		 
@@ -214,22 +152,21 @@
 
 
 <div  style='margin: 0px; background-color: #bbbbbb;overflow: hidden;'>
-		<img id="btn" src="Images/Home.png" onclick="window.location.href ='https://futureimagecomics.com/';" alt="Home">
-  <button id="btn2"   onclick="video';">CAMERA</button>
-   <button id="triangle" src="Images/droid.png" >Astro Droid</button`>
+
+   <button id="btn" onclick="window.location.href = '  https://futureimagecomics.com/';">Home</button>
+  <button id="btn2" onclick="video';">Camera</button>
+   <button id="triangle"  value="Replace texture">R2-Unit</button>
    
-    <button id="cube" src="Images/avatar.png">Logos</button>
-	 <button id="fbxTexture" value="Replace texture" src="Images/texturebtn.png">Texture</button>
-	 <button id="cylinder"  src="Images/animations.png">Animations</button>
- <img id="UIrt" src="Images/uirt.png"></img`>
+    <button id="cube">Dancing Moves</button>
+	 <button id="cylinder">Fireworks</button>
+ 
 </div>
 	 
 		<script>
 		
 		//disabled button
 		function disableR2(){
-	document.getElementById("triangle").disabled = true;
-		  
+		document.getElementById("triangle").disabled = true;
 		}
 		
 		function enableR2(){
@@ -252,11 +189,12 @@
 		function enableGlowText(){
 		document.getElementById("cylinder").disabled = false;
 		// add a DAT.gui for fine tuning
-	 }
+	 
+		}
 		
 			disableR2();
 		
- 
+ var updateFcts	= [];
 			var container, stats, controls, object;
 		 var light;
 
@@ -405,11 +343,11 @@ var mesh;
 	 
 	 
 				//scene.background = new THREE.Color( 0xa0a0a0 );
+				 
 				scene.fog = new THREE.Fog( 0xa0a0a0, 200, 1000 );
 				light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 				light.position.set( 0, 200, 0 );
 				scene.add( light );
-
 			 
 
 				light = new THREE.DirectionalLight( 0xffffff );
@@ -470,8 +408,7 @@ var mesh;
 				
 				 loader.load( 'obj/models/My_r2_astro_droid.fbx', function ( objectA ) {
 					mesh1 = objectA
-					mixer = new THREE.AnimationMixer( mesh1 );
-					var action1 = mixer.clipAction( objectA.animations[ 0 ] );
+					mixer = new THREE.AnimationMixer( mesh1 ); action1 = mixer.clipAction( objectA.animations[ 0 ] );
 					action1.play();
 
 				 
@@ -510,18 +447,15 @@ var mesh;
 				} else if ( type === 2 ) {
 	
 					 
-				// loader.load( 'obj/models/texans_static_4bl.fbx', function ( objectB ) {
-				 // loader.load( 'obj/models/texans_houstonbld.fbx', function ( objectB ) {
-				   loader.load( 'obj/models/bird_fly_3.fbx', function ( objectB ) {
+				 loader.load( 'obj/models/salsa.fbx', function ( objectB ) {
 					mesh2 = objectB
 					mixer = new THREE.AnimationMixer(mesh2 );
 
 					var action = mixer.clipAction( mesh2.animations[ 0 ] );
-				
-			 
-		 	action.play();
+					action.play();
 					
-				 
+					 
+					
 					 function rotateObject2(mesh2, degreeX=0, degreeY= 0, degreeZ=0){
 			
 			mesh2.rotateY(THREE.Math.degToRad(degreeY));
@@ -532,8 +466,8 @@ var mesh;
 			}
 				
 					//object.scale.set( 4, 4, 4 );
-					//mesh2.scale.set( 0.007, 0.007, 0.007 ); //left-Right, top-botom, Zoom, logo
-					mesh2.scale.set( 0.03, 0.03, 0.03 ); //left-Right, top-botom, Zoom
+					mesh2.scale.set( 0.02, 0.02, 0.02 ); //left-Right, top-botom, Zoom
+				
 					rotateObject2(mesh2,-0,-50,0);
 					//rotateObject2(object, -90,0,0); //mocap positition
 					mesh2.position.set(-0,0,-0.9);
@@ -545,19 +479,18 @@ var mesh;
 					//cancelAnimationFrame(id2);
 					 scene.remove(mesh1);
 				   scene.remove(mesh3);
-					 // mesh2.geometry.computeVertexNormals(true);
+					  mesh2.geometry.computeVertexNormals(true);
 					 } );
 					 
 			} else if ( type === 3 ) {
-		 loader.load( 'obj/models/ri_tshirt_3ds_redo.fbx', function ( objectB ) {
-		  //loader.load( 'obj/models/ri_withradio.fbx', function ( objectB ) {
+		  loader.load( 'obj/models/bird_fly_3.fbx', function ( objectB ) {
 					mesh3 = objectB
 					mixer = new THREE.AnimationMixer(mesh3 );
 
 					var action = mixer.clipAction( mesh3.animations[ 0 ] );
 					action.play();
 					 
-					shininess: 25
+					
 					 function rotateObject2(mesh3, degreeX=0, degreeY= 0, degreeZ=0){
 			
 			mesh3.rotateY(THREE.Math.degToRad(degreeY));
@@ -568,18 +501,18 @@ var mesh;
 			}
 				
 					//object.scale.set( 4, 4, 4 );
-					mesh3.scale.set(0.07, 0.07, 0.07); //left-Right, top-botom, Zoom
-				//mesh3.scale.set( 0.04, 0.04, 0.04 ); //left-Right, top-botom, Zoom
+					mesh3.scale.set( 0.03, 0.03, 0.03 ); //left-Right, top-botom, Zoom
+				
 					rotateObject2(mesh3,-0,-50,0);
 					//rotateObject2(object, -90,0,0); //mocap positition
 					mesh3.position.set(-0,0,-0.9);
 					
 					   
 					scene.add( mesh3 );
-				
+				 
 			scene.remove(mesh1);
 			scene.remove(mesh2);
-			 mesh3.geometry.computeVertexNormals(true);
+			 mesh2.geometry.computeVertexNormals(true);
 			});	
 			
 			}
@@ -594,52 +527,28 @@ var mesh;
 			    // document.getElementById('triangle').onclick = NULL;
 				 
 					addGeometry( 1 )
-					 disableR2();
+					disableR2();
 					   enablefireworks();
-					enableGlowText();	
-					   					   
+					enableGlowText();					   
 				   } ); 
 			 
 				document.getElementById( 'cube' ).addEventListener( 'click', function () {
 				 
 					addGeometry( 2 );
-					 disablefireworks();
+					disablefireworks();
 					enableR2();
 					enableGlowText();
-					 
 				} );
 				
 				document.getElementById( 'cylinder' ).addEventListener( 'click', function () {
 
-					 addGeometry( 3 )
+					addGeometry( 3 );
 					 disableGlowText();
 					enablefireworks(); 
 					enableR2();
-					   
-					 	
 				} );
-				
-				
-					 function onReplaceTexture() {
-			  var textureLoader = new THREE.TextureLoader();
-			  textureLoader.setCrossOrigin("anonymous");
-			  textureLoader.load('obj/models/Logo_DiffuseMap.jpg', function (texture) {
-
-			    // mesh is a group contains multiple sub-objects. Traverse and apply texture to all. 
-			    mesh3.traverse(function (child) {
-			      if (child instanceof THREE.Mesh) {
-
-			        // apply texture
-			        child.material.map = texture
-			        child.material.needsUpdate = true;
-			      }
-			    });
-
-			  });
-			  }
 			 
-			var FBXTex = document.getElementById("fbxTexture");
-       FBXTex.addEventListener("click", onReplaceTexture)
+				
   // 
   
   ////////////////////////////
@@ -681,7 +590,15 @@ var mesh;
 		
     }
   
- 
+
+			function onReplaceTexture() {
+			//mash1.visible = false;
+			cancelAnimationFrame(id2);
+			   action1.stop();
+			  scene.remove(mesh);
+			   material.dispose();
+			   geometry.dispose();
+			}
 
       //
  
@@ -706,7 +623,7 @@ function onWindowResize() {
 				onRenderFcts.push(function(){
 		renderer.render( scene, camera );
 		
-		 
+		// mesh3.rotation.y = mesh3.rotation.y + 0.01;
 		 
 	})
  	
@@ -724,9 +641,9 @@ function onWindowResize() {
 			onRenderFct(deltaMsec/1000, nowMsec/1000)
 		});
 		
-	// mesh2.rotation.y = mesh2.rotation.y + 0.01;
-		 
-  //mesh3.rotation.y = mesh3.rotation.y + 0.01;
+	 
+		
+
 	})
 	
 	}
@@ -742,8 +659,7 @@ function onWindowResize() {
  
 				stats.update();
 				 
-				  
-				  
+
 			}
  
 		</script>

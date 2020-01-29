@@ -480,7 +480,7 @@ var mesh;
 				 loader.load( 'obj/models/My_r2_astro_droid.fbx', function ( objectA ) {
 					mesh1 = objectA
 					mixer = new THREE.AnimationMixer( mesh1 );
-					var action1 = mixer.clipAction( objectA.animations[ 0 ] );
+					var action1 = mixer.clipAction( mesh1.animations[ 0 ] );
 					action1.play();
 
 				 

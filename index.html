@@ -477,7 +477,7 @@ var mesh;
 
 				if ( type === 1 ) {
 				
-				 loader.load( 'obj/models/My_r2_astro_droid.fbx', function ( objectA ) {
+				 loader.load( 'obj/models/chp7.fbx', function ( objectA ) {
 					mesh1 = objectA
 					mixer = new THREE.AnimationMixer( mesh1 );
 					var action1 = mixer.clipAction( mesh1.animations[ 0 ] );
@@ -495,7 +495,7 @@ var mesh;
 			}
 				
 					//object.scale.set( 4, 4, 4 );
-					mesh1.scale.set( 0.2, 0.2, 0.2 ); //left-Right, top-botom, Zoom
+					mesh1.scale.set( 0.05, 0.05, 0.05 ); //left-Right, top-botom, Zoom
 				
 					rotateObject2(mesh1,-0,-50,0);
 					//rotateObject2(object, -90,0,0); //mocap positition
@@ -521,7 +521,7 @@ var mesh;
 					 
 				// loader.load( 'obj/models/texans_static_4bl.fbx', function ( objectB ) {
 				 // loader.load( 'obj/models/texans_houstonbld.fbx', function ( objectB ) {
-				   loader.load( 'obj/models/hummingbird_2.fbx', function ( objectB ) {
+				   loader.load( 'obj/models/hummingbird_3.fbx', function ( objectB ) {
 					mesh2 = objectB
 					mixer = new THREE.AnimationMixer(mesh2 );
 
@@ -558,7 +558,7 @@ var mesh;
 					 } );
 					 
 			} else if ( type === 3 ) {
-		 loader.load( 'obj/models/ri_tshirt_3ds_redo.fbx', function ( objectB ) {
+		 loader.load( 'obj/models/drink_2.fbx', function ( objectB ) {
 		  //loader.load( 'obj/models/ri_withradio.fbx', function ( objectB ) {
 					mesh3 = objectB
 					mixer = new THREE.AnimationMixer(mesh3 );
@@ -577,7 +577,7 @@ var mesh;
 			}
 				
 					//object.scale.set( 4, 4, 4 );
-					mesh3.scale.set(0.07, 0.07, 0.07); //left-Right, top-botom, Zoom
+					mesh3.scale.set(0.004, 0.004, 0.004); //left-Right, top-botom, Zoom
 				//mesh3.scale.set( 0.04, 0.04, 0.04 ); //left-Right, top-botom, Zoom
 					rotateObject2(mesh3,-0,-50,0);
 					//rotateObject2(object, -90,0,0); //mocap positition

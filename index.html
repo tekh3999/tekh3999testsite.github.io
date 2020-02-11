@@ -280,8 +280,8 @@ var button = document.getElementById('triangle');
 	   
 			function init() {
 			var id2
-		var fov = 45;	
-		
+		'var fov = 45;	
+		var fov camera.fov, zoom = 1.0, inc = -0.01;
 	 
 // custom global variables
 var mesh;
@@ -315,7 +315,10 @@ var mesh;
 			 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.set( 0, 100, 500 );
 	//var camera = new THREE.Camera();
+	
+	 
 	scene.add(camera);
+	
 
 				//controls = new THREE.OrbitControls( camera );
 				//controls.target.set( 0, 100, 0 );
@@ -749,6 +752,9 @@ function onWindowResize() {
 
 				if ( mixer ) mixer.update( delta );
  
+ camera.fov = fov * zoom
+	camera.updateProjectionMatrix();
+	if (zoom <=0.2 || zoom >=1.0 ) { inc = -inc;}
 				stats.update();
 				 
 				  
